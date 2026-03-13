@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ..models.bots import Bots
 
 
-async def add_bot(bot_token: str, db: AsyncSession):
+async def create_bot(bot_token: str, db: AsyncSession) -> Bots:
     add_bot = Bots(bot_token=bot_token)
 
     db.add(add_bot)
